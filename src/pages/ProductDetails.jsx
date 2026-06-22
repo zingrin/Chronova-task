@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import products from "../data/products";
 import { useCart } from "../context/CartContext";
 

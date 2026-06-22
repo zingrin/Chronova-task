@@ -1,7 +1,12 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router";
-import CartProvider from "./context/CartContext";
 import router from "./routes/Router";
+import CartProvider from "./context/CartContext";
+import "./index.css";
 
-<CartProvider>
-  <RouterProvider router={router} />
-</CartProvider>;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <CartProvider>
+    <RouterProvider router={router} />
+  </CartProvider>,
+);
