@@ -1,18 +1,21 @@
 import products from "../../data/products";
+import ProductCard from "../ProductCard";
+import SectionTitle from "../shared/SectionTitle";
 
 const BestSellers = () => {
-  const best = products.filter((item) => item.bestSeller);
+  const best = products.filter((p) => p.bestSeller);
 
   return (
-    <section className="py-20">
-      <div className="max-w-7xl mx-auto px-5">
-        <h2 className="text-4xl font-bold mb-10">Best Sellers</h2>
+    <section className="py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <SectionTitle
+          title="Best Sellers"
+          subtitle="Most loved luxury watches by our customers."
+        />
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {best.map((item) => (
-            <div key={item.id} className="bg-zinc-900 p-6 rounded-xl">
-              {item.name}
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {best.map((p) => (
+            <ProductCard key={p.id} product={p} />
           ))}
         </div>
       </div>
